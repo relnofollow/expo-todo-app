@@ -60,7 +60,7 @@ const TodoLists = ({ lists, navigation, addList, deleteList, renameList, toggleI
                                 onToggleItem={(itemId) => toggleItem(list.id, itemId)} />
                         );
                     }}
-                    keyExtractor={list => list.id}
+                    keyExtractor={list => list.id.toString()}
                 />
                 <NewList onCreate={addList} />
                 {rename && <RenameList list={rename}
