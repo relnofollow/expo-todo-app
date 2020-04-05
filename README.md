@@ -1,13 +1,13 @@
 # expo-todo-app
 
-Simple To-Do app created for educational purposes.
+Simple To-Do app for educational purposes built using React Native and Expo.
 
 ## Preview
 In Expo App: https://exp.host/@elena.kim/expo-todo-app  
 Snack (without persistance, imported manually): https://snack.expo.io/@elena.kim/e04920
 
 ## How To Run locally
-1. Follow [expo-cli installation guide](https://docs.expo.io/versions/v36.0.0/get-started/installation/)
+1. Follow expo-cli [installation guide](https://docs.expo.io/versions/v36.0.0/get-started/installation/)
 2. In the command line run:
 ```
 cd expo-todo-app
