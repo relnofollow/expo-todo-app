@@ -31,6 +31,7 @@
     "android": {
       "package": "com.elenakim.expotodoapp",
       "versionCode": 1
-    }
+    },
+    "description": "Simple To-Do app created for educational purposes"
   }
 }
