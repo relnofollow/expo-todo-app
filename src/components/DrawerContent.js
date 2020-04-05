@@ -11,7 +11,7 @@ const DrawerContent = (props) => {
             <View style={[styles.logoContainer, { backgroundColor: theme.colors.background }]}>
                 <Icon name='checkbox-multiple-marked' size={40} color='#69D2EE'
                     style={styles.logo} />
-                <Title>To-Do App</Title>
+                <Title style={styles.logoText}>To-Do App</Title>
             </View>
             <Divider />
             <TouchableRipple
@@ -54,7 +54,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     logo: {
-        marginRight: 15
+        marginRight: 10
+    },
+    logoText: {
+        fontSize: 25
     }
 })
 

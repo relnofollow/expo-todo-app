@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Text, Caption, withTheme, Divider } from 'react-native-paper';
 import { Linking } from 'expo';
 
@@ -14,8 +14,10 @@ const About = ({ theme }) => {
             <View style={styles.creditsContainer}>
                 <Caption style={styles.link} onPress={() => Linking.openURL('https://dribbble.com/Lione999')}>Lione999</Caption>
                 <Caption> from </Caption>
-                <Image source={require('../../assets/dribble.png')}
-                    resizeMode='contain' style={[styles.dribble, { tintColor: theme.colors.text }]} />
+                <TouchableOpacity onPress={() => Linking.openURL('https://dribbble.com')} >
+                    <Image source={require('../../assets/dribble.png')}
+                        resizeMode='contain' style={[styles.dribble, { tintColor: theme.colors.text }]} />
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
         marginVertical: 20
     },
     link: {
-        color: 'blue'
+        color: '#0366d6'
     },
     creditsContainer: {
         flexDirection: 'row',
