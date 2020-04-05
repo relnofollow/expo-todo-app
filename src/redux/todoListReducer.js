@@ -20,8 +20,6 @@ const todoListReducer = (state = initialState.lists, action) => {
         case types.DELETE_LIST: {
             return produce(state, lists => {
                 let { listId } = payload;
-                console.log(payload);
-                console.log(lists);
                 return lists.filter(list => list.id !== listId);
             });
         }
@@ -44,8 +42,6 @@ const todoListReducer = (state = initialState.lists, action) => {
         case types.DELETE_ITEM:
             return produce(state, lists => {
                 let { listId, itemId } = payload;
-
-                console.log(payload);
 
                 let list = lists.find(_list => _list.id === listId);
 

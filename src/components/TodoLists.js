@@ -51,7 +51,6 @@ const TodoLists = ({ lists, navigation, addList, deleteList, renameList, toggleI
                 <FlatList
                     data={lists}
                     renderItem={({ item: list }) => {
-                        console.log(list);
                         return (
                             <TodoListCard {...{ list }}
                                 onPress={() => onTodoListPress(list)}
