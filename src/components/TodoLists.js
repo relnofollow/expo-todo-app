@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert, FlatList } from 'react-native';
 import { IconButton, Subheading, withTheme } from 'react-native-paper';
 
 import TodoListCard from './TodoListCard';
@@ -48,21 +48,26 @@ const TodoLists = ({ lists, navigation, addList, deleteList, renameList, toggleI
     return (
         <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
             <>
-                {lists.map(list => {
-                    return (
-                        <TodoListCard key={list.id} {...{ list }}
-                            onPress={() => onTodoListPress(list)}
-                            onDelete={() => handleDeleteList(list)}
-                            onRename={() => setRename(list)}
-                            onToggleItem={(itemId) => toggleItem(list.id, itemId)} />
-                    );
-                })}
+                <FlatList
+                    data={lists}
+                    renderItem={({ item: list }) => {
+                        console.log(list);
+                        return (
+                            <TodoListCard {...{ list }}
+                                onPress={() => onTodoListPress(list)}
+                                onDelete={() => handleDeleteList(list)}
+                                onRename={() => setRename(list)}
+                                onToggleItem={(itemId) => toggleItem(list.id, itemId)} />
+                        );
+                    }}
+                    keyExtractor={list => list.id}
+                />
                 <NewList onCreate={addList} />
                 {rename && <RenameList list={rename}
                     onRename={handleRenameList}
                     onCancel={() => setRename(null)} /> || null}
             </>
-        </View>
+        </View >
     );
 }
 
@@ -70,7 +75,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'flex-start',
-        alignItems: 'stretch'
+        alignItems: 'stretch',
+        paddingBottom: 10
     },
     containerEmpty: {
         flex: 1,
