@@ -21,7 +21,7 @@ Navigation: [react-navigation](https://reactnavigation.org/)
 State management: [redux](https://redux.js.org/), [react-redux](https://react-redux.js.org/)  
 Persistence: AsyncStorage with [redux-persist](https://github.com/rt2zz/redux-persist)  
 
-## Main Feautures
+## Main Features
 1. Create / Rename / Delete list of todos
 2. Create / Toggle / Delete / Edit todo
 3. Settings  
